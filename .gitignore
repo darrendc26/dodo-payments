@@ -1,0 +1,10 @@
+# Rust Build Artifacts
+target/
+**/*.rs.bk
+
+# Sensitive Environment Configurations
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db

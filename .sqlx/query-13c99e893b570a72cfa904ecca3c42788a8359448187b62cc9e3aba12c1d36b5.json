@@ -1,0 +1,50 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            SELECT wd.id, wd.event_type, wd.payload, wd.attempts, we.url, we.secret\n            FROM webhook_deliveries wd\n            JOIN webhook_endpoints we ON wd.endpoint_id = we.id\n            WHERE wd.status = 'pending' OR (wd.status = 'failed' AND wd.next_attempt_at <= NOW() AND wd.attempts < 5)\n            ORDER BY wd.created_at ASC\n            LIMIT 10\n            ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 1,
+        "name": "event_type",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 2,
+        "name": "payload",
+        "type_info": "Jsonb"
+      },
+      {
+        "ordinal": 3,
+        "name": "attempts",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 4,
+        "name": "url",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 5,
+        "name": "secret",
+        "type_info": "Varchar"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "13c99e893b570a72cfa904ecca3c42788a8359448187b62cc9e3aba12c1d36b5"
+}
