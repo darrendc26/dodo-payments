@@ -4,7 +4,7 @@ This repository contains a Cargo-workspace based Rust implementation of a minima
 
 ## Demo Video
 Please find the unscripted video walkthrough here:
-**[Loom Walkthrough Video](https://loom.com/share/placeholder-video-link-dodo-payments-darren)**
+**[Loom Walkthrough Video](https://www.loom.com/share/d58fbe15daf84d6d9cf2dfcbf8608893)**
 
 ---
 
